@@ -5,19 +5,35 @@ import { Card } from "../component/card.js";
 
 export const Home = () => {
 	let backstyle = {
-		backgroundColor: "darkgrey"
+		backgroundColor: "rgb(37, 36, 36 )"
 	};
+
+	let over = {
+		overflowX: "scroll",
+		flexWrap: "nowrap"
+	};
+
 	return (
-		<div className="container-flux bg-dark p-5" style={backstyle}>
+		<div className="container-flux p-5" style={backstyle}>
 			<h1 className="my-5">Characters</h1>
-			<div className="row">
+			<div className="row overflow-scroll" style={over}>
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+				<Card />
 				<Card />
 				<Card />
 				<Card />
 				<Card />
 			</div>
 			<h1 className="my-5">Planets</h1>
-			<div className="row">
+			<div className="row" style={over}>
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+				<Card />
 				<Card />
 				<Card />
 				<Card />
