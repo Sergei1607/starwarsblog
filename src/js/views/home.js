@@ -1,15 +1,28 @@
 import React from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
+import { Card } from "../component/card.js";
 
-export const Home = () => (
-	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
-		<p>
-			<img src={rigoImage} />
-		</p>
-		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
-		</a>
-	</div>
-);
+export const Home = () => {
+	let backstyle = {
+		backgroundColor: "darkgrey"
+	};
+	return (
+		<div className="container-flux bg-dark p-5" style={backstyle}>
+			<h1 className="my-5">Characters</h1>
+			<div className="row">
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+			</div>
+			<h1 className="my-5">Planets</h1>
+			<div className="row">
+				<Card />
+				<Card />
+				<Card />
+				<Card />
+			</div>
+		</div>
+	);
+};

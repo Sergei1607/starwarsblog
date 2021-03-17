@@ -1,10 +1,22 @@
 import React, { Component } from "react";
 
-export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
-);
+export const Footer = () => {
+	let navstyle = {
+		backgroundColor: "black"
+	};
+
+	let iconstyle = {
+		color: "goldenrod"
+	};
+	return (
+		<div style={navstyle}>
+			<footer className="footer mt-auto text-center">
+				<nav className="navbar">
+					<span style={iconstyle} className="navbar-brand h1">
+						Footer
+					</span>
+				</nav>
+			</footer>
+		</div>
+	);
+};
