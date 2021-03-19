@@ -27,7 +27,7 @@ export function Card(props) {
 				<img src="https://unsplash.it/600/400" className="card-img-top" alt="" />
 				<div className="card-body" style={bodycolor}>
 					<h5 className="card-title">{props.title}</h5>
-					<p className="card-text">{props.population}</p>
+					<p className="card-text"> Population: {props.population}</p>
 					<button className="btn btn-primary" style={buttonstyles}>
 						Learn more!
 					</button>
