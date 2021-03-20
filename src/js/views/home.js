@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
-import { Card } from "../component/card.js";
+import { Card1 } from "../component/card1.js";
+import { Card2 } from "../component/card2.js";
+
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -21,20 +23,22 @@ export const Home = () => {
 			<h1 className="my-5">Characters</h1>
 			<div className="row overflow-scroll" style={over}>
 				{store.planets.map((item, index) => {
-					return <Card key={index} title={item.name} population={item.population} />;
+					return <Card1 key={index} title={item.name} population={item.population} />;
 				})}
 			</div>
 			<h1 className="my-5">Planets</h1>
 			<div className="row" style={over}>
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
+				{store.characters.map((item, index) => {
+					return (
+						<Card2
+							key={index}
+							title={item.name}
+							gender={item.gender}
+							eye={item.eye_color}
+							hair={item.hair_color}
+						/>
+					);
+				})}
 			</div>
 		</div>
 	);

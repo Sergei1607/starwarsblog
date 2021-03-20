@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
 	let iconstyle = {
 		color: "goldenrod",
 		height: "100px"
@@ -59,7 +61,7 @@ export const Navbar = () => {
 							<Dropdown>
 								<Dropdown.Toggle id="dropdown-basic" style={buttonstyle}>
 									Favorites
-									<span style={favoritestyle}> 0 </span>
+									<span style={favoritestyle}> {store.favorites} </span>
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu>
