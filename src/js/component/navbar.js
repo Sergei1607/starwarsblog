@@ -42,12 +42,14 @@ export const Navbar = () => {
 					<i className="fab fa-youtube fa-lg px-2" style={iconstyle} />
 				</div>
 				<div className="col-5 ms-5">
-					<img
-						className="ms-5"
-						src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo-1.png"
-						height="80px"
-						style={marginstyles}
-					/>
+					<Link to="/">
+						<img
+							className="ms-5"
+							src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo-1.png"
+							height="80px"
+							style={marginstyles}
+						/>
+					</Link>
 				</div>
 				<div className="col-3">
 					<form className="d-flex">
@@ -61,13 +63,17 @@ export const Navbar = () => {
 							<Dropdown>
 								<Dropdown.Toggle id="dropdown-basic" style={buttonstyle}>
 									Favorites
-									<span style={favoritestyle}> {store.favorites} </span>
+									<span style={favoritestyle}> {store.numberfavorites} </span>
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu>
-									<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-									<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-									<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+									{store.listfavorites.map((item, index) => {
+										return (
+											<Link to="/single" key={index}>
+												<Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
+											</Link>
+										);
+									})}
 								</Dropdown.Menu>
 							</Dropdown>
 						</div>

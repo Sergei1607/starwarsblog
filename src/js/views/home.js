@@ -23,7 +23,7 @@ export const Home = () => {
 			<h1 className="my-5">Characters</h1>
 			<div className="row overflow-scroll" style={over}>
 				{store.planets.map((item, index) => {
-					return <Card1 key={index} title={item.name} population={item.population} />;
+					return <Card1 key={index} title={item.name} population={item.population} favorite={item.name} />;
 				})}
 			</div>
 			<h1 className="my-5">Planets</h1>
