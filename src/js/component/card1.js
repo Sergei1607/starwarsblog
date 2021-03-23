@@ -7,8 +7,7 @@ import { Context } from "../store/appContext";
 export function Card1(props) {
 	const [iconcolor, seticonColor] = useState("white");
 	const { store, actions } = useContext(Context);
-	const [favorite, setFavorite] = useState([props.favorite]);
-	const [number, setNumber] = useState(1);
+	const [favorite, setFavorite] = useState(props.favorite);
 
 	let buttonstyles = {
 		backgroundColor: "goldenrod",
@@ -33,33 +32,25 @@ export function Card1(props) {
 				<div className="card-body" style={bodycolor}>
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text"> {"Population: " + props.population}</p>
-					<Link to="/single">
+					<Link to="/demo">
 						<button className="btn btn-primary" style={buttonstyles}>
 							Learn more!
 						</button>
 					</Link>
-					<button
-						className="btn btn-primary"
-						style={marginstyles}
-						onClick={() => {
-							if (iconcolor == "white") {
-								seticonColor("yellow");
-								setFavorite([...favorite, props.favorite]);
-								console.log(favorite);
-								actions.setlistFavorites(favorite);
-								setNumber(number + 1);
-								actions.setnumberFavorites(number);
-							} else {
-								seticonColor("white");
-							}
-						}}>
+					<button className="btn btn-primary" style={marginstyles}>
 						<i
 							className="fas fa-star"
 							onClick={() => {
 								if (iconcolor == "white") {
 									seticonColor("yellow");
+									setFavorite(props.favorite);
+									actions.sumFavorites();
+									actions.setlistFavorites(favorite);
 								} else {
 									seticonColor("white");
+									setFavorite(props.favorite);
+									actions.lessFavorites();
+									actions.removelistFavorites([favorite]);
 								}
 							}}
 						/>

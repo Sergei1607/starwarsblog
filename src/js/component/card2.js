@@ -6,6 +6,7 @@ import { Context } from "../store/appContext";
 export function Card2(props) {
 	const [iconcolor, seticonColor] = useState("white");
 	const { store, actions } = useContext(Context);
+	const [favorite, setFavorite] = useState(props.favorite);
 
 	let buttonstyles = {
 		backgroundColor: "goldenrod",
@@ -35,11 +36,23 @@ export function Card2(props) {
 					<button className="btn btn-primary" style={buttonstyles}>
 						Learn more!
 					</button>
-					<button
-						className="btn btn-primary"
-						style={marginstyles}
-						onClick={() => actions.setStore({ favorites: 1 })}>
-						<i className="fas fa-star" />
+					<button className="btn btn-primary" style={marginstyles}>
+						<i
+							className="fas fa-star"
+							onClick={() => {
+								if (iconcolor == "white") {
+									seticonColor("yellow");
+									setFavorite(props.favorite);
+									actions.sumFavorites();
+									actions.setlistFavorites(favorite);
+								} else {
+									seticonColor("white");
+									setFavorite(props.favorite);
+									actions.lessFavorites();
+									actions.removelistFavorites([favorite]);
+								}
+							}}
+						/>
 					</button>
 				</div>
 			</div>
@@ -52,5 +65,6 @@ Card2.propTypes = {
 	image: PropTypes.string,
 	gender: PropTypes.string,
 	eye: PropTypes.string,
-	hair: PropTypes.string
+	hair: PropTypes.string,
+	favorite: PropTypes.string
 };

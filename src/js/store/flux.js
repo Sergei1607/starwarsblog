@@ -50,10 +50,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setlistFavorites(val) {
-				setStore({ listfavorites: [val] });
+				const store = getStore();
+				setStore({ listfavorites: [...store.listfavorites, val] });
+				console.log(store.listfavorites);
 			},
-			setnumberFavorites(val) {
-				setStore({ numberfavorites: val });
+
+			removelistFavorites(val) {
+				const store = getStore();
+				setStore({
+					listfavorites: store.listfavorites.filter(item => {
+						return item !== val.toString();
+					})
+				});
+			},
+			sumFavorites() {
+				const store = getStore();
+				setStore({ numberfavorites: store.numberfavorites + 1 });
+				console.log(store.numberfavorites);
+			},
+
+			lessFavorites() {
+				const store = getStore();
+				setStore({ numberfavorites: store.numberfavorites - 1 });
+				console.log(store.numberfavorites);
 			}
 		}
 	};

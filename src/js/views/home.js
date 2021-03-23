@@ -36,6 +36,7 @@ export const Home = () => {
 							gender={item.gender}
 							eye={item.eye_color}
 							hair={item.hair_color}
+							favorite={item.name}
 						/>
 					);
 				})}

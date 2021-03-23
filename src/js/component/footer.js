@@ -21,7 +21,7 @@ export const Footer = () => {
 			<footer className="footer mt-auto text-center">
 				<nav className="navbar">
 					<span style={iconstyle} className="navbar-brand h1">
-						{store.listfavorites}
+						StarWars Blog
 					</span>
 				</nav>
 			</footer>
