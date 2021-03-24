@@ -12,13 +12,26 @@ export const Singlec = props => {
 		borderColor: "black",
 		color: "black"
 	};
+
+	let imagearraycharacters = [
+		"https://img.culturacolectiva.com/cdn-cgi/image/f=auto,w=1600,q=80,fit=contain/featured_image/2018/09/24/1537835785388/luke-skywalker.jpg",
+		"https://i1.wp.com/wipy.tv/wp-content/uploads/2020/09/pierna-plateada-de-c3po.jpg?fit=1000%2C600&ssl=1",
+		"https://e00-marca.uecdn.es/assets/multimedia/imagenes/2020/05/03/15885120366138.jpg",
+		"https://i2.wp.com/wipy.tv/wp-content/uploads/2020/06/darth-vader-es-el-sith-mas-poderoso.jpg?fit=1000%2C600&ssl=1",
+		"https://lafuerzanoticias.files.wordpress.com/2018/07/leia-organa-1-tall.jpg?w=1536&h=768&crop=1",
+		"https://cdn.lanetaneta.com/wp-content/uploads/2020/07/Star-Wars-Por-que-Owen-Lars-no-reconocio-a-C-3PO-780x470.jpg",
+		"https://lumiere-a.akamaihd.net/v1/images/databank_shmiskywalkerlars_01_169_7449f0a8.jpeg?region=341%2C0%2C878%2C878",
+		"https://cdnb.artstation.com/p/assets/images/images/001/727/465/large/paul-beards-r5-d4-final-preview-01.jpg?1451853235",
+		"https://pbs.twimg.com/media/EouvaiYVoAAmmQ0.jpg",
+		"https://i.blogs.es/cd0fbf/ewan/1366_2000.jpeg"
+	];
 	return (
 		<div className="jumbotron">
 			{" "}
 			<div className="container">
 				<div className="row">
 					<div className="col-6 ">
-						<img src="https://unsplash.it/600/400" className="card-img-top" height="400px" />
+						<img src={imagearraycharacters[params.theid]} className="card-img-top" height="400px" />
 					</div>
 					<div className="col-6">
 						<h1 className="d-flex justify-content-center">{store.characters[params.theid].name}</h1>

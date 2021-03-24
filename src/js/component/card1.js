@@ -8,7 +8,7 @@ export function Card1(props) {
 	const [iconcolor, seticonColor] = useState("white");
 	const { store, actions } = useContext(Context);
 	const [favorite, setFavorite] = useState(props.favorite);
-
+	const [index, setIndex] = useState(props.index);
 	let buttonstyles = {
 		backgroundColor: "goldenrod",
 		borderColor: "black",
@@ -28,7 +28,7 @@ export function Card1(props) {
 	return (
 		<div className="col-3 ">
 			<div className="card">
-				<img src={"https://unsplash.it/600/400"} className="card-img-top" alt="" />
+				<img src={props.image} className="card-img-top" height="200px" />
 				<div className="card-body" style={bodycolor}>
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text"> {"Population: " + props.population}</p>
@@ -44,13 +44,16 @@ export function Card1(props) {
 								if (iconcolor == "white") {
 									seticonColor("yellow");
 									setFavorite(props.favorite);
+									setIndex(props.index);
 									actions.sumFavorites();
+									actions.setplanetindex(index);
 									actions.setlistFavoritesPlanets(favorite);
 								} else {
 									seticonColor("white");
 									setFavorite(props.favorite);
 									actions.lessFavorites();
 									actions.removelistFavoritesPlanets([favorite]);
+									actions.removePlanetsindex(index);
 								}
 							}}
 						/>
@@ -64,7 +67,6 @@ export function Card1(props) {
 Card1.propTypes = {
 	title: PropTypes.string,
 	population: PropTypes.string,
-	image: PropTypes.string,
 	favorite: PropTypes.string,
 	index: PropTypes.number,
 	image: PropTypes.string

@@ -70,7 +70,7 @@ export const Navbar = props => {
 									<p className="text-center bg-warning">Planets</p>
 									{store.favoritesplanets.map((item, index) => {
 										return (
-											<Link to={"/singlep/" + index} key={index}>
+											<Link to={"/singlep/" + store.planetsindex[index]} key={index}>
 												<Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
 											</Link>
 										);
@@ -79,7 +79,7 @@ export const Navbar = props => {
 									<p className="text-center bg-warning">Characters</p>
 									{store.favoritescharacters.map((item, index) => {
 										return (
-											<Link to={"/singlec/" + index} key={index}>
+											<Link to={"/singlec/" + store.characterindex[index]} key={index}>
 												<Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
 											</Link>
 										);
