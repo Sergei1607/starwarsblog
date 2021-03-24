@@ -4,7 +4,8 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+import { Singlep } from "./views/singlep.js";
+import { Singlec } from "./views/singlec.js";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -28,8 +29,11 @@ const Layout = () => {
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/singlep/:theid">
+							<Singlep />
+						</Route>
+						<Route exact path="/singlec/:theid">
+							<Singlec />
 						</Route>
 					</Switch>
 					<Footer />

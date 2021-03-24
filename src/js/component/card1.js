@@ -28,11 +28,11 @@ export function Card1(props) {
 	return (
 		<div className="col-3 ">
 			<div className="card">
-				<img src="https://unsplash.it/600/400" className="card-img-top" alt="" />
+				<img src={"https://unsplash.it/600/400"} className="card-img-top" alt="" />
 				<div className="card-body" style={bodycolor}>
 					<h5 className="card-title">{props.title}</h5>
 					<p className="card-text"> {"Population: " + props.population}</p>
-					<Link to="/demo">
+					<Link to={"/singlep/" + props.index}>
 						<button className="btn btn-primary" style={buttonstyles}>
 							Learn more!
 						</button>
@@ -45,12 +45,12 @@ export function Card1(props) {
 									seticonColor("yellow");
 									setFavorite(props.favorite);
 									actions.sumFavorites();
-									actions.setlistFavorites(favorite);
+									actions.setlistFavoritesPlanets(favorite);
 								} else {
 									seticonColor("white");
 									setFavorite(props.favorite);
 									actions.lessFavorites();
-									actions.removelistFavorites([favorite]);
+									actions.removelistFavoritesPlanets([favorite]);
 								}
 							}}
 						/>
@@ -65,5 +65,7 @@ Card1.propTypes = {
 	title: PropTypes.string,
 	population: PropTypes.string,
 	image: PropTypes.string,
-	favorite: PropTypes.string
+	favorite: PropTypes.string,
+	index: PropTypes.number,
+	image: PropTypes.string
 };

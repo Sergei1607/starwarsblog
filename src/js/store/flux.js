@@ -15,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			planets: [],
 			characters: [],
-			listfavorites: [],
+			favoritesplanets: [],
+			favoritescharacters: [],
 			numberfavorites: 0
 		},
 		actions: {
@@ -49,16 +50,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 
-			setlistFavorites(val) {
+			setlistFavoritesPlanets(val) {
 				const store = getStore();
-				setStore({ listfavorites: [...store.listfavorites, val] });
-				console.log(store.listfavorites);
+				setStore({ favoritesplanets: [...store.favoritesplanets, val] });
 			},
 
-			removelistFavorites(val) {
+			setlistFavoritesCharacters(val) {
+				const store = getStore();
+				setStore({ favoritescharacters: [...store.favoritescharacters, val] });
+			},
+
+			removelistFavoritesPlanets(val) {
 				const store = getStore();
 				setStore({
-					listfavorites: store.listfavorites.filter(item => {
+					favoritesplanets: store.favoritesplanets.filter(item => {
+						return item !== val.toString();
+					})
+				});
+			},
+
+			removelistFavoritesCharacters(val) {
+				const store = getStore();
+				setStore({
+					favoritescharacters: store.favoritescharacters.filter(item => {
 						return item !== val.toString();
 					})
 				});

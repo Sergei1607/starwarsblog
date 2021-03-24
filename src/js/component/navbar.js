@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Context } from "../store/appContext";
 
-export const Navbar = () => {
+export const Navbar = props => {
 	const { store, actions } = useContext(Context);
 	let iconstyle = {
 		color: "goldenrod",
@@ -67,9 +67,19 @@ export const Navbar = () => {
 								</Dropdown.Toggle>
 
 								<Dropdown.Menu>
-									{store.listfavorites.map((item, index) => {
+									<p className="text-center bg-warning">Planets</p>
+									{store.favoritesplanets.map((item, index) => {
 										return (
-											<Link to="/single" key={index}>
+											<Link to={"/singlep/" + index} key={index}>
+												<Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
+											</Link>
+										);
+									})}
+									<hr className="my-4 bg-warning" />
+									<p className="text-center bg-warning">Characters</p>
+									{store.favoritescharacters.map((item, index) => {
+										return (
+											<Link to={"/singlec/" + index} key={index}>
 												<Dropdown.Item href="#/action-1">{item}</Dropdown.Item>
 											</Link>
 										);

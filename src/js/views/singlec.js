@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-export const Single = props => {
+export const Singlec = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 
@@ -14,13 +14,14 @@ export const Single = props => {
 	};
 	return (
 		<div className="jumbotron">
+			{" "}
 			<div className="container">
 				<div className="row">
 					<div className="col-6 ">
 						<img src="https://unsplash.it/600/400" className="card-img-top" height="400px" />
 					</div>
 					<div className="col-6">
-						<h1 className="d-flex justify-content-center">{store.planets.name}</h1>
+						<h1 className="d-flex justify-content-center">{store.characters[params.theid].name}</h1>
 						<p className="text-center mt-5">
 							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
 							been the industrys standard dummy text ever since the 1500s, when an unknown printer took a
@@ -40,39 +41,39 @@ export const Single = props => {
 						<h3>Name</h3>
 					</div>
 					<div className="col-2 text-center">
-						<h3>Birth Year</h3>
-					</div>
-					<div className="col-2 text-center">
-						<h3>Gender</h3>
-					</div>
-					<div className="col-2 text-center">
 						<h3>Height</h3>
+					</div>
+					<div className="col-2 text-center">
+						<h3>Hair Color</h3>
 					</div>
 					<div className="col-2 text-center">
 						<h3>Skin Color</h3>
 					</div>
 					<div className="col-2 text-center">
-						<h3>Eye color</h3>
+						<h3>Birth Year</h3>
+					</div>
+					<div className="col-2 text-center">
+						<h3>Gender</h3>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].name}</h5>
 					</div>
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].height}</h5>
 					</div>
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].hair_color}</h5>
 					</div>
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].skin_color}</h5>
 					</div>
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].birth_year}</h5>
 					</div>
 					<div className="col-2 text-center">
-						<h5 className="mt-3">Eye color</h5>
+						<h5 className="mt-3 text-capitalize">{store.characters[params.theid].gender}</h5>
 					</div>
 				</div>
 			</div>
@@ -87,6 +88,6 @@ export const Single = props => {
 	);
 };
 
-Single.propTypes = {
+Singlec.propTypes = {
 	match: PropTypes.object
 };

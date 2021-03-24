@@ -20,13 +20,21 @@ export const Home = () => {
 
 	return (
 		<div className="container-flux p-5" style={backstyle}>
-			<h1 className="my-5">Characters</h1>
+			<h1 className="my-5">Planets</h1>
 			<div className="row overflow-scroll" style={over}>
 				{store.planets.map((item, index) => {
-					return <Card1 key={index} title={item.name} population={item.population} favorite={item.name} />;
+					return (
+						<Card1
+							key={index}
+							title={item.name}
+							population={item.population}
+							favorite={item.name}
+							index={index}
+						/>
+					);
 				})}
 			</div>
-			<h1 className="my-5">Planets</h1>
+			<h1 className="my-5">Characters</h1>
 			<div className="row" style={over}>
 				{store.characters.map((item, index) => {
 					return (
@@ -37,6 +45,7 @@ export const Home = () => {
 							eye={item.eye_color}
 							hair={item.hair_color}
 							favorite={item.name}
+							index={index}
 						/>
 					);
 				})}

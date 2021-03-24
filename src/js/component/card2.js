@@ -2,6 +2,7 @@ import React, { Component, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
+import { Link, useParams } from "react-router-dom";
 
 export function Card2(props) {
 	const [iconcolor, seticonColor] = useState("white");
@@ -33,9 +34,11 @@ export function Card2(props) {
 					<p className="card-text"> {"Gender: " + props.gender}</p>
 					<p className="card-text"> {"Eyes color: " + props.eye}</p>
 					<p className="card-text"> {"Hair color: " + props.hair}</p>
-					<button className="btn btn-primary" style={buttonstyles}>
-						Learn more!
-					</button>
+					<Link to={"/singlec/" + props.index}>
+						<button className="btn btn-primary" style={buttonstyles}>
+							Learn more!
+						</button>
+					</Link>
 					<button className="btn btn-primary" style={marginstyles}>
 						<i
 							className="fas fa-star"
@@ -44,12 +47,12 @@ export function Card2(props) {
 									seticonColor("yellow");
 									setFavorite(props.favorite);
 									actions.sumFavorites();
-									actions.setlistFavorites(favorite);
+									actions.setlistFavoritesCharacters(favorite);
 								} else {
 									seticonColor("white");
 									setFavorite(props.favorite);
 									actions.lessFavorites();
-									actions.removelistFavorites([favorite]);
+									actions.removelistFavoritesCharacters([favorite]);
 								}
 							}}
 						/>
@@ -66,5 +69,6 @@ Card2.propTypes = {
 	gender: PropTypes.string,
 	eye: PropTypes.string,
 	hair: PropTypes.string,
-	favorite: PropTypes.string
+	favorite: PropTypes.string,
+	index: PropTypes.number
 };
