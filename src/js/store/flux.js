@@ -93,15 +93,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setplanetindex(val) {
 				const store = getStore();
 				setStore({ planetsindex: [...store.planetsindex, val] });
-				console.log(store.planetsindex);
 			},
 
 			removePlanetsindex(val) {
 				const store = getStore();
 				setStore({
 					planetsindex: store.planetsindex.filter(item => {
-						console.log(item);
-						console.log(val);
 						return item !== val;
 					})
 				});
@@ -110,6 +107,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 			setcharacterindex(val) {
 				const store = getStore();
 				setStore({ characterindex: [...store.characterindex, val] });
+			},
+
+			removecharacterindex(val) {
+				const store = getStore();
+				setStore({
+					characterindex: store.characterindex.filter(item => {
+						return item !== val;
+					})
+				});
 			}
 		}
 	};

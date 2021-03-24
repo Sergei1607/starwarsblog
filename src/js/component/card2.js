@@ -56,6 +56,7 @@ export function Card2(props) {
 									setFavorite(props.favorite);
 									actions.lessFavorites();
 									actions.removelistFavoritesCharacters([favorite]);
+									actions.removecharacterindex(index);
 								}
 							}}
 						/>
