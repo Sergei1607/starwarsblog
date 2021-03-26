@@ -35,11 +35,21 @@ export const Navbar = props => {
 		<div className="container-fluid p-3" style={navstyle}>
 			<div className="row">
 				<div className="col-4">
-					<i className="fab fa-facebook fa-lg px-2 " style={iconstyle} />
-					<i className="fab fa-instagram fa-lg px-2" style={iconstyle} />
-					<i className="fab fa-tumblr fa-lg px-2" style={iconstyle} />
-					<i className="fab fa-twitter fa-lg px-2" style={iconstyle} />
-					<i className="fab fa-youtube fa-lg px-2" style={iconstyle} />
+					<a href=" https://www.facebook.com/starwarsla">
+						<i className="fab fa-facebook fa-lg px-2 " style={iconstyle} />
+					</a>
+					<a href="https://www.instagram.com/starwars/?hl=es-la">
+						<i className="fab fa-instagram fa-lg px-2" style={iconstyle} />
+					</a>
+					<a href="https://www.tumblr.com/tagged/star+wars?sort=top">
+						<i className="fab fa-tumblr fa-lg px-2" style={iconstyle} />
+					</a>
+					<a href="https://twitter.com/starwars?lang=es">
+						<i className="fab fa-twitter fa-lg px-2" style={iconstyle} />
+					</a>
+					<a href="https://www.youtube.com/user/starwars">
+						<i className="fab fa-youtube fa-lg px-2" style={iconstyle} />
+					</a>
 				</div>
 				<div className="col-5 ms-5">
 					<Link to="/">
